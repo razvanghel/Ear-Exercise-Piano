@@ -1,0 +1,37 @@
+BASIC_FONT = 'Helvetica 13'
+
+#COLORS
+CA = '#BEE9E8'
+CB = '#78C4D6'
+CC = '#0F3249'
+CD = '#CAE9FF'
+CE = '#5FA8D3'
+
+#ROOT
+ROOT_BACKGROUND = CA
+#TOP MENU
+TOP_MENU_BACKGROUND = ROOT_BACKGROUND
+#SOUNDS_PER_SESSION, STARTING OCTAVE LABELS
+TOP_LABEL_COLOR = CB
+TOP_LABEL_FONT = 'Helvetica 23 bold'
+TOP_LABEL_TEXT_COLOR = CC
+CHECKBOX_TEXT_LABEL_BACKGROUND = TOP_LABEL_COLOR
+CHECKBOX_TEXT_COLOR = CC
+CHECKBOX_TEXT_FONT = 'Helvetica 15 bold'
+BUTTON_UP_AND_DOWN_COLOR = CB
+VALUE_FONT = 'Helvetica 26 bold'
+VALUE_TEXT_COLOR = CC
+VALUE_BACKGROUND_COLOR = ROOT_BACKGROUND
+
+#BUTTONS: SAVE SETTINGS, PRACTICE, TEST
+THREE_BUTTONS_COLOR = CB
+THREE_BUTTONS_FONT = 'Helvetica 16 bold'
+THREE_BUTTONS_TEXT_COLOR = CC
+
+def create_args(args_list, values_list):
+    assert len(args_list) == len(values_list)
+    args = {}
+    for i in range(len(args_list)):
+        args[args_list[i]] = values_list[i]
+    return args
+
