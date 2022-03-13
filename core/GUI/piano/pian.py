@@ -1,7 +1,7 @@
 import random
 from core.GUI.gui_pieces import GUIPiece, GUITypes
 from core.GUI.piano.piano_keys import PianoKey
-from core.configurations import TOTAL_TIME, SOUNDS_COUNT, TIME_FOR_SHOW_ANSWER
+from core.configurations import TOTAL_TIME, SOUNDS_COUNT, TIME_FOR_SHOW_ANSWER, PIANO_OCTAVE
 
 
 class Piano(GUIPiece):
@@ -71,7 +71,7 @@ class Piano(GUIPiece):
         set_current_octave(current_octave)
             sets the current octave of the piano
        """
-    def __init__(self, master, rlx, rly, rlwidth, rlheight, current_octave = 1, octaves = 3, parent = False, **kw):
+    def __init__(self, master, rlx, rly, rlwidth, rlheight, current_octave = 1, octaves = PIANO_OCTAVE, parent = False, **kw):
         super().__init__(master, rlx, rly, rlwidth, rlheight, GUITypes.FRAME, parent = parent, **kw)
         assert current_octave > 0 and current_octave < 9
         assert octaves > 0 and octaves < 9

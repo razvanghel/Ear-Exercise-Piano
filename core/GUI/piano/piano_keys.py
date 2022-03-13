@@ -4,10 +4,10 @@ import pyaudio
 import soundfile
 from pygame import mixer
 from core.GUI.gui_pieces import GUIButton, GUILabel
-from core.configurations import TIME_TO_GUESS, TIME_FOR_SHOW_ANSWER, SOUNDS_COUNT
+from core.configurations import PRACTICE_GUESS_TIME, TIME_FOR_SHOW_ANSWER, SOUNDS_COUNT
 from definitions import ROOT_DIR
 
-TOTAL_WAITING = TIME_TO_GUESS + TIME_FOR_SHOW_ANSWER
+TOTAL_WAITING = PRACTICE_GUESS_TIME + TIME_FOR_SHOW_ANSWER
 
 class PianoKey(GUIButton):
 
@@ -147,8 +147,7 @@ class PianoKey(GUIButton):
         return self.get_name() > other.get_name()
 
     def __play(self, id):
-        path = f"{ROOT_DIR}\\sounds\\{self.note} id {id} octave_{self.octave}.mp3"
-        self.log(f"playing note {self.note}{self.octave} id-{id} ")
+        path = f"{ROOT_DIR}\\sounds\\{self.note}{self.octave}-id{id}.mp3"
         mixer.music.load(path)
         mixer.music.play()
 
@@ -157,7 +156,7 @@ class PianoKey(GUIButton):
 
     def __play_and_change_color_to_red(self):
         self.play_random()
-        self.gui.after(TIME_TO_GUESS, self.change_color_to_red)
+        self.gui.after(PRACTICE_GUESS_TIME, self.change_color_to_red)
 
     def __change_color_to_default(self):
         self.log("Changing color to default")
