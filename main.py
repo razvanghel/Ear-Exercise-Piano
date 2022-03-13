@@ -1,9 +1,10 @@
 import tkinter
 
+from core.setup import setup
+setup()
 from core.GUI.gui_configurations import ROOT_BACKGROUND
 from core.GUI.top_menu.top_menu import TopMenu
 from core.configurations import TOPMENU_RELHEIGHT
-
 class MainMenu(tkinter.Tk):
 
     def __init__(self):
@@ -15,6 +16,5 @@ class MainMenu(tkinter.Tk):
         menu.place()
 
 if __name__ == "__main__":
-
     root = MainMenu()
     root.mainloop()
