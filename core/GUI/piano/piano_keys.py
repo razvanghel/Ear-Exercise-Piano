@@ -1,7 +1,5 @@
 import random
 from datetime import datetime
-import pyaudio
-import soundfile
 from pygame import mixer
 from core.GUI.gui_pieces import GUIButton, GUILabel
 from core.configurations import PRACTICE_GUESS_TIME, TIME_FOR_SHOW_ANSWER, SOUNDS_COUNT
